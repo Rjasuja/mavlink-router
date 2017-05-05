@@ -1,0 +1,11 @@
+[Unit]
+Description=Mavlink-Router Service
+#After = 
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/mavlink-routerd 2>/var/log/mavlink-routerd.log >/dev/null &
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
